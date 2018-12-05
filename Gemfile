@@ -47,7 +47,6 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'bullet'
   gem 'coffeelint'
-  gem 'rails_best_practices', '~> 1.18.1'
   gem 'reek', '~> 4.6.2'
   gem 'rubocop', '~> 0.49'
   gem 'scss_lint', require: false
