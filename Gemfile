@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Decorator
+gem 'active_decorator'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -38,8 +39,31 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Test
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+  # Code analyze
+  gem 'brakeman', require: false
+  gem 'bullet'
+  gem 'coffeelint'
+  gem 'rails_best_practices', '~> 1.18.1'
+  gem 'reek', '~> 4.6.2'
+  gem 'rubocop', '~> 0.49'
+  gem 'scss_lint', require: false
+  gem 'slim_lint'
+
+  # Debugger
+  gem 'better_errors'
+  gem 'byebug'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+
+  # Print debug
+  gem 'awesome_print'
+  gem 'tapp'
 end
 
 group :development do
