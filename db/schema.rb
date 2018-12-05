@@ -10,27 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_054257) do
+ActiveRecord::Schema.define(version: 2018_12_05_091017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "position", null: false
     t.string "amazon_link"
     t.string "amazon_img"
     t.datetime "created_at", null: false
-    t.datetime "updated_at"
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contents_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.text "name", null: false
-    t.text "twitter_id", null: false
-    t.string "twitter_icon", null: false
-    t.string "twitter_url", null: false
+    t.text "twitter_id"
+    t.string "twitter_icon"
+    t.string "twitter_url"
     t.datetime "created_at", null: false
-    t.datetime "updated_at"
+    t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "contents", "users"
 end
