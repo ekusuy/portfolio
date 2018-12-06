@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>OriginalApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+doctype html
+html
+  head
+    title
+      OriginalApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  body
+    main = yield
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+
+    = javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.slim.min.js'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'
+    = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js'
+    = javascript_include_tag 'application'
