@@ -1,4 +1,5 @@
-"use strict";
+/*jslint node: true */
+'use strict';
 $(window).on('load resize', function(){
   trimming('.photo');//ここにトリミングしたい枠の種類
 });
@@ -15,19 +16,19 @@ function trimming (amazon_img) {
     //画像の縦横比と枠の縦横比を比べて分岐させ違うトリミングをする
     if (i_par > box_par) { //画像が枠より横長の場合高さ100%で幅左右を切る
       $(i).css({
-        "width": "auto",
-        "height":"100%"
+        'width': 'auto',
+        'height':'100%'
       });
     }else{
       $(i).css({//画像が枠より縦長または同じの場合幅100%にして高さの上下を切る
-        "width": "100%",
-        "height":"auto"
+        'width': '100%',
+        'height':'auto'
       });
     }
   });
 }
 
 $( function() {
-  $( "#sortable" ).sortable();
-  $( "#sortable" ).disableSelection();
+  $( '#sortable' ).sortable();
+  $( '#sortable' ).disableSelection();
 } );
