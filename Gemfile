@@ -29,6 +29,9 @@ gem 'jbuilder'
 gem 'meta-tags'
 gem 'slim-rails'
 
+# Authentication
+gem 'sorcery', github: 'sorcery/sorcery'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
