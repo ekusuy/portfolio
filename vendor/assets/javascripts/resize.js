@@ -3,8 +3,8 @@
 $(window).on('load resize', function(){
   trimming('.photo');//ここにトリミングしたい枠の種類
 });
-function trimming (amazon_img) {
-  $(amazon_img).each(function(){
+function trimming (amazon_image) {
+  $(amazon_image).each(function(){
     let box = $(this);
     let i = $('img',this);
     let box_w =$(box).width();
@@ -29,6 +29,6 @@ function trimming (amazon_img) {
 }
 
 $( function() {
-  $( '#sortable' ).sortable();
-  $( '#sortable' ).disableSelection();
+  $('#sortable').sortable();
+  $('#sortable').disableSelection();
 } );
