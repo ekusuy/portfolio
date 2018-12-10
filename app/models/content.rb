@@ -1,7 +1,7 @@
 class Content < ApplicationRecord
   belongs_to :user
 
-  def img_check
-    amazon_img.present? ? amazon_img : '/assets/sample.jpg'
+  def content_img
+    amazon_img.present? ? amazon_img : 'sample.jpg'
   end
 end
