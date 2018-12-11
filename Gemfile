@@ -22,6 +22,12 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
 
+
+
+# Configuration
+gem 'config'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 # UI/UX
 gem 'rails-i18n', '~> 5.0.0'
 # gem 'turbolinks'
@@ -53,8 +59,9 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'bullet'
   gem 'coffeelint'
-  gem 'reek', '~> 4.6.2'
-  gem 'rubocop', '~> 0.49'
+  gem 'reek'
+  gem 'rubocop'
+  gem "rubocop-rails_config"
   gem 'scss_lint', require: false
   gem 'slim_lint'
 

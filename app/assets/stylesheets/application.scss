@@ -9,7 +9,33 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
+*= require_self
  */
+// #FIXME　デザインは実装後に変更する必要あり。
+#sortable {
+  margin: auto;
+  padding: 0;
+  width: 60%;
+}
+
+#sortable:after {
+  display: block;
+  clear: both;
+}
+
+.photo{
+  float: left; //横並び
+  overflow: hidden; //はみ出し部分は非表示
+  position: relative;
+  width: 33%;
+  height: 300px;
+}
+.photo img{
+  width: 100%;
+  height: auto;
+  /*画像のセンタリング（中央寄せ）*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
