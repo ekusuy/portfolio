@@ -22,13 +22,6 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
 
-#amazon
-gem 'amazon-ecs'
-
-# Configuration
-gem 'config'
-gem 'dotenv-rails', require: 'dotenv/rails-now'
-
 # UI/UX
 gem 'rails-i18n', '~> 5.0.0'
 # gem 'turbolinks'
