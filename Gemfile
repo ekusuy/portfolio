@@ -22,8 +22,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
 
-#amazon
-gem 'amazon-ecs'
+
 
 # Configuration
 gem 'config'
