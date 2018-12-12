@@ -20,7 +20,6 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'uglifier'
-gem 'webpacker'
 
 
 
