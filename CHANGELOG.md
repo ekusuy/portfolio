@@ -2,3 +2,4 @@
 1.0.1 precompile用の設定を変更
 1.0.2 heroku用webpacker設定変更
 1.0.3 webpacker削除
+1.0.4 テストページ追加
