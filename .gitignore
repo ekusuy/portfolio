@@ -29,10 +29,10 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/cert.pm
+/config/key.pem
 
 .env
-.key.pem
-.master.key
 /public/packs
 /public/packs-test
 /node_modules
