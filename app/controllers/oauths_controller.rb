@@ -12,10 +12,15 @@ class OauthsController < ApplicationController
     @user = User.new(user_params)
     if User.find_by(twitter_id: @user.twitter_id).present?
       @user = User.find_by(twitter_id: @user.twitter_id)
-    else @user.save
+    else
+      # ユーザーに紐づくコンテンツを9個生成
+      (1..9).each do |n|
+      @user.contents.build(position: n)
+      end
+      @user.save
     end
     auto_login(@user)
-    redirect_to users_path, notice: 'ユーザーを作成しました'
+    redirect_to users_path, notice: 'ログインしました'
   end
 
 end
