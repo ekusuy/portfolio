@@ -6,23 +6,16 @@ class OauthsController < ApplicationController
   def callback
     provider = 'twitter'
     provider_name = 'twitter'
-    binding.pry
-    if @user = login_from(provider)
-      redirect_to login_path, notice: 'ログインに成功しました'
-    else
-      begin
-        binding.pry
-        @user = create_from(provider)
-        # この時点でuser_attrs(@provider.user_info_mapping, @user_hash)にTwitterでのユーザー情報が入っている
-        # 以降はrescueに遷移される
-        reset_session
-        auto_login(@user)
-        redirect_to login_path, notice: 'ユーザーを作成しました'
-      rescue
-        binding.pry
-        redirect_to login_path, notice: 'ログインに失敗しました'
-      end
+    @user = login_from(provider)
+    # この時点でuser_attrs(@provider.user_info_mapping, @user_hash)にDBに必要なTwitter上のユーザー情報が入っている
+    user_params = user_attrs(@provider.user_info_mapping, @user_hash)
+    @user = User.new(user_params)
+    if User.find_by(twitter_id: @user.twitter_id).present?
+      @user = User.find_by(twitter_id: @user.twitter_id)
+    else @user.save
     end
+    auto_login(@user)
+    redirect_to users_path, notice: 'ユーザーを作成しました'
   end
 
 end
