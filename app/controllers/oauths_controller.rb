@@ -19,6 +19,6 @@ class OauthsController < ApplicationController
       @user.save
     end
     auto_login(@user)
-    redirect_to users_path, notice: 'ログインしました'
+    redirect_to user_path(@user), notice: 'ログインしました'
   end
 end
