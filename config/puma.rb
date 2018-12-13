@@ -17,12 +17,12 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Development環境をSSL化
 if "development" == ENV.fetch("RAILS_ENV") { "development" }
-    ssl_bind (ENV['DOCKER_HOST'] || '127.0.0.1'), '3001', {
+      ssl_bind (ENV['DOCKER_HOST'] || '127.0.0.1'), '3001', {
       key: "config/key.pem",
       cert: "config/cert.pem",
       verify_mode: "none"
     }
-  end
+end
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together

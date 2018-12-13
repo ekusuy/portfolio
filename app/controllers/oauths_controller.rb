@@ -15,12 +15,11 @@ class OauthsController < ApplicationController
     else
       # ユーザーに紐づくコンテンツを9個生成
       (1..9).each do |n|
-      @user.contents.build(position: n)
+        @user.contents.build(position: n)
       end
       @user.save
     end
     auto_login(@user)
     redirect_to users_path, notice: 'ログインしました'
   end
-
 end
