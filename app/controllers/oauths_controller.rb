@@ -4,6 +4,7 @@ class OauthsController < ApplicationController
   end
 
   def callback
+    # TODO：providerを判定するメソッドが必要。下記2つはとりあえず。
     provider = 'twitter'
     provider_name = 'twitter'
     @user = login_from(provider)
