@@ -21,4 +21,9 @@ class OauthsController < ApplicationController
     auto_login(@user)
     redirect_to user_path(@user), notice: 'ログインしました'
   end
+
+  def destroy
+    logout
+    redirect_to root_path
+  end
 end
