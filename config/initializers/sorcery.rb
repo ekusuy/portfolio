@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:external]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -77,7 +77,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack] .
   # Default: `[]`
   #
-  # config.external_providers =
+  config.external_providers = [:twitter]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -109,10 +109,16 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
-  config.twitter.key = ENV["TWITTER_API_KEY"]
-  config.twitter.secret = ENV["TWITTER_API_SECRET_KEY"]
-  config.twitter.callback_url = ENV["TWITTER_callback_url"]
-  config.twitter.user_info_mapping = {}
+  config.twitter.key = 'CPx51URid1S8tFABMY6w2ABxh'
+  config.twitter.secret = '9a8wthvfe0HKBT59mawTyN2OkWOyTnfDaFF9F1DLX63UudZ65R'
+  config.twitter.callback_url = 'https://127.0.0.1:3001/oauth/callback?provider=twitter'
+  config.twitter.user_info_mapping = {
+    name: 'name',
+    email: 'email',
+    twitter_id: 'id',
+    twitter_icon: 'profile_image_url_https',
+    twitter_url: 'screen_name'
+  }
   #
   # config.facebook.key = ""
   # config.facebook.secret = ""
@@ -507,7 +513,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in authentications class.
     # Default: `:user_id`
