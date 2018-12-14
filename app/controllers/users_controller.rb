@@ -5,4 +5,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @contents = Content.where(user_id: @user.id) if @user
   end
+
+  def index; end
 end
