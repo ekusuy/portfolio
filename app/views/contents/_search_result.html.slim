@@ -1,0 +1,9 @@
+- if @contents.present?
+  - @contents.each do |content|
+    .list
+      = link_to (image_tag(content.image_url,
+      style: "width: 70px;height: 100px;display: inline-block;")),
+      user_content_path(amazon_img: content.image_url,
+                        amazon_link: content.url),
+                        method: :patch
+      = content.title
