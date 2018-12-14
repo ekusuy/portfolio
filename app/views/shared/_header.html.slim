@@ -1,0 +1,4 @@
+- if current_user.present?
+  = link_to 'My Page', user_path(current_user)
+  = link_to 'ユーザー一覧', users_path
+  = link_to 'Logout', logout_path, method: :delete
