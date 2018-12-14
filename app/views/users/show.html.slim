@@ -1,11 +1,10 @@
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+/TODO: 他人のポートフォリオをシェアする機能の必要性を検討。おそらく不要。
+= render 'shared/share_button'
 
-.container
-  a.twitter-share-button data-hashtags="portfolio" data-lang="ja" data-show-count="false" data-size="large" data-text="わたしのすきなもの集めてみました！！" href="https://twitter.com/share?ref_src=twsrc%5Etfw"  Tweet
-  ul#sortable
-    - @contents.each do |content|
-      li.photo
-        = link_to content.amazon_link do
-          = image_tag content.content_img
-  = javascript_include_tag "jquery-ui.min.js"
-  = javascript_include_tag "resize.js"
+ul#sortable
+  - @contents.each do |content|
+    li.photo
+      = link_to content.amazon_link do
+        = image_tag content.content_img
+= javascript_include_tag "jquery-ui.min.js"
+= javascript_include_tag "resize.js"
