@@ -51,7 +51,7 @@ gem 'active_decorator'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-#amazon
+# amazon API用
 gem 'amazon-ecs'
 
 # Configuration
