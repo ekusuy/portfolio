@@ -17,7 +17,7 @@ $(window).on('load', function() {
       clearTimeout(timer);
       // 処理を500ms毎に実行
       timer = setTimeout(ajaxSearch, 500, input);
-    };
+    }
   };
 
   $('#book_search').on('keyup', function() {

@@ -7,7 +7,7 @@ class ContentsController < ApplicationController
       # デバックログ出力するために記述
       Amazon::Ecs.debug = true
 
-      # Amazon::Ecs::Responceオブジェクトの取得
+      # Amazon::Ecs::Responseオブジェクトの取得
       contents = Amazon::Ecs.item_search(
         params[:keyword],
         search_index:  'All',
