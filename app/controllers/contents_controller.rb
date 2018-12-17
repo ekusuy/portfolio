@@ -1,32 +1,10 @@
 class ContentsController < ApplicationController
+  include AmazonSearchModule
   before_action :set_content
   before_action :authentication_check
 
   def edit
-    if params[:keyword].present?
-      # デバックログ出力するために記述
-      Amazon::Ecs.debug = true
-
-      # Amazon::Ecs::Responseオブジェクトの取得
-      contents = Amazon::Ecs.item_search(
-        params[:keyword],
-        search_index:  'All',
-        dataType: 'script',
-        response_group: 'ItemAttributes, Images',
-        country:  'jp',
-      )
-
-      # 商品のタイトル,画像URL, 詳細ページURLの取得
-      @contents = []
-      contents.items.each do |item|
-        content = Search_item.new(
-          item.get('ItemAttributes/Title'),
-          item.get('LargeImage/URL'),
-          item.get('DetailPageURL'),
-        )
-        @contents << content
-      end
-    end
+    search_item_from_amazon
   end
 
   def update
@@ -37,6 +15,7 @@ class ContentsController < ApplicationController
       render :edit
     end
   end
+
     private
       def content_params
         params.permit(
@@ -50,7 +29,7 @@ class ContentsController < ApplicationController
       end
 
       def authentication_check
-        # 編集権限があるかチェック
+        # 編集ページは作成者以外見れないように作成者IDとユーザIDをチェック
         redirect_to user_path(params[:user_id]), danger: t('このページをみる権限がありません') unless logged_in? && current_user.id == @content.user_id
       end
 end
