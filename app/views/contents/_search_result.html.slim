@@ -1,8 +1,7 @@
-- if @contents.present?
-  - @contents.each do |content|
+- if @results.present?
+  - @results.each do |result|
     .list
-      = link_to image_tag(content.image_url, class: "search_result"),
-      user_content_path(amazon_img: content.image_url,
-                        amazon_link: content.url),
+      = link_to image_tag(result.image_url, class: "search_result"),
+      user_content_path(result.update_params),
                         method: :patch
-      = content.title
+      = result.title

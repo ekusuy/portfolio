@@ -7,4 +7,9 @@ class Search_item
     @image_url = image_url
     @url = url
   end
+
+  def update_params
+    { amazon_img: "#{image_url}",
+      amazon_link: "#{url}" }
+  end
 end
