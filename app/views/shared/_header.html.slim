@@ -1,13 +1,12 @@
 .header
   .header_inner
     .li.header_left
-      .button = link_to 'ロゴ画像', ''
+      .button = link_to 'ロゴ画像', '', class: 'square_btn'
     .li.header_center
-      .button = link_to 'ユーザー一覧', users_path
+      .button = link_to 'ユーザー一覧', users_path, class: 'square_btn'
     .li.header_right
       - if current_user.present?
-        = link_to 'ログアウト', logout_path, method: :delete
         = link_to user_path(current_user) do
-          = image_tag current_user.twitter_icon,class: 'rounded_circle'
+          = image_tag current_user.twitter_icon, class: 'rounded_circle'
       - else
-        = link_to 'ログイン', auth_at_provider_path(provider: :twitter)
+        .button = link_to 'ログイン', auth_at_provider_path(provider: :twitter), class: 'square_btn'
