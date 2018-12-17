@@ -1,5 +1,13 @@
-- if current_user.present?
-  = link_to 'My Page', user_path(current_user)
-  = link_to 'ユーザー一覧', users_path
-  = link_to 'Logout', logout_path, method: :delete
-  
+.header
+  .header_inner
+    .li.header_left
+      .button = link_to 'ロゴ画像', ''
+    .li.header_center
+      .button = link_to 'ユーザー一覧', users_path
+    .li.header_right
+      - if current_user.present?
+        = link_to 'ログアウト', logout_path, method: :delete
+        = link_to user_path(current_user) do
+          = image_tag current_user.twitter_icon,class: 'rounded_circle'
+      - else
+        = link_to 'ログイン', auth_at_provider_path(provider: :twitter)

@@ -43,5 +43,60 @@
 }
 
 .twitter_share {
+  height: 50px;
+  margin-top: 100px;
   text-align: center;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  position: fixed; // ヘッダーを固定
+  z-index: 1;
+  top: 0; // 固定する位置
+  left: 0; // 固定する位置
+  right: 0; // 固定する位置
+}
+
+.li {
+  display: inline;
+  padding: 0 5px;
+}
+
+.header_innner {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+
+.header_center {
+  width: 70%;
+  text-align: center;
+}
+
+.button {
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.header_right {
+  width: 15%;
+  margin-right: 50px;
+  float: right;
+}
+
+.header_left {
+  width: 15%;
+  margin-left: 50px;
+  float: left;
+}
+
+.rounded_circle {
+  border-radius: 50%;
 }
