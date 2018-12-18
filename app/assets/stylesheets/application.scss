@@ -104,13 +104,16 @@
   display: inline-block;
 }
 
+#nav {
+  max-height: 0px;
+}
+
 .header_right {
   width: 15%;
   margin-right: 30px;
   float: right;
   height: 70px;
   ul {
-    margin: 0;
     padding: 0;
     text-align: center;
   }
@@ -121,6 +124,7 @@
     list-style-type: none;
     line-height: 30px;
     background-color: white;
+
     a {
       text-decoration: none;
       text-align: center;
