@@ -4,5 +4,7 @@ class UsersController < ApplicationController
     @contents = Content.where(user_id: @user.id) if @user
   end
 
-  def index; end
+  def index
+    @users = User.all
+  end
 end
