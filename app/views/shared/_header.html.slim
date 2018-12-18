@@ -7,7 +7,9 @@
       .button = link_to 'ユーザー一覧', users_path
     .li.header_right
       - if current_user.present?
-        .button = link_to user_path(current_user) do
-                  = image_tag current_user.twitter_icon, class: 'rounded_circle'
+        = image_tag current_user.twitter_icon, class: 'rounded_circle dropdown'
+        ul#nav
+          li = link_to 'マイページ', user_path(current_user)
+          li = link_to 'ログアウト', logout_path, method: :delete
       - else
-        .button = link_to 'LOGIN', auth_at_provider_path(provider: :twitter)
+        ul#nav = link_to 'ログイン', auth_at_provider_path(provider: :twitter)
