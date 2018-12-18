@@ -34,12 +34,9 @@
 }
 .photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
   /*画像のセンタリング（中央寄せ）*/
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .twitter_share {
@@ -48,6 +45,7 @@
   text-align: center;
 }
 
+<<<<<<< HEAD
 .header {
   height: 70px;
   width: 100%;
@@ -159,4 +157,9 @@
 
 .rounded_circle {
   border-radius: 50%;
+
+  .search_result {
+  width: 70px;
+  height: 100px;
+  display: inline-block;
 }
