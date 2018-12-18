@@ -4,7 +4,7 @@
 ul#sortable
   - @contents.each do |content|
     li.photo
-      = link_to content.amazon_link do
+      = link_to content.create_link do
         = image_tag content.content_img
 = javascript_include_tag "jquery-ui.min.js"
 = javascript_include_tag "resize.js"
