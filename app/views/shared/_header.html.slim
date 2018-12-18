@@ -4,10 +4,9 @@
       = link_to root_path do
         = image_tag 'header_logo.png', class: 'header_logo'
     .li.header_center
-      .button = link_to 'ALL USERS', users_path
+      .button = link_to 'ユーザー一覧', users_path
     .li.header_right
       - if current_user.present?
-        .button = link_to 'LOGOUT', logout_path, method: :delete
         .button = link_to user_path(current_user) do
                   = image_tag current_user.twitter_icon, class: 'rounded_circle'
       - else
