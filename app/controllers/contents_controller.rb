@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   before_action :authentication_check
 
   def edit
-    search_item_from_amazon
+    @results = search_item_from_amazon(params[:keyword])
   end
 
   def update
