@@ -1,2 +1,1 @@
-- @contents.each do |content|
-  = render 'shared/user_template', content: content
+= render partial: 'shared/user_template', collection: @contents, as: 'content'
