@@ -128,7 +128,6 @@
     list-style-type: none;
     line-height: 30px;
     background-color: white;
-
     a {
       text-decoration: none;
       text-align: center;
@@ -138,6 +137,44 @@
       color: black;
     }
   }
+}
+
+.header_right > .menu {
+  height: 70px;
+  img {
+    cursor: pointer;
+  }
+  ul {
+    list-style-type: none;
+    overflow: hidden;
+    width: 150px;
+    transition: max-height ease 0.7s;
+    max-height: 0;
+    li {
+      height: 30px;
+      width: 150px;
+      text-align: center;
+      border: 1px solid rgb(160, 156, 156);
+      border-top: 0;
+      border-radius: 3px;
+      background-color: white;
+      :hover {
+        background-color: rgb(224, 217, 217);
+      }
+      a {
+        display: block;
+        width: 150px;
+        text-decoration: none;
+        line-height: 30px;
+        text-align: center;
+        color: black;
+      }
+    }
+  }
+}
+
+.header_right > .menu:hover > ul {
+  max-height: 300px;
 }
 
 .header_right > #nav > li:hover {
