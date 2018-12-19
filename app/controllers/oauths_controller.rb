@@ -4,7 +4,7 @@ class OauthsController < ApplicationController
   end
 
   def callback
-    twitter_access_denied && return
+    twitter_access_denied && return  if params[:denied].present?
     @user = login_from(params[:provider])
     # この時点でuser_attrs(@provider.user_info_mapping, @user_hash)にDBに必要なTwitter上のユーザー情報が入っている
     user_params = user_attrs(@provider.user_info_mapping, @user_hash)
@@ -17,19 +17,17 @@ class OauthsController < ApplicationController
       @user.save
     end
     auto_login(@user)
-    redirect_to user_path(@user), notice: 'ログインしました'
+    redirect_to user_path(@user), success: 'ログインしました'
   end
 
   def destroy
     logout
-    redirect_to root_path
+    redirect_to root_path, success: 'ログアウトしました'
   end
 
   private
     def twitter_access_denied
-      if params[:denied].present?
-        redirect_to root_path, notice: 'ログインできませんでした'
-        return true
-      end
+      redirect_to root_path, danger: 'ログインできませんでした'
+      return true
     end
 end
