@@ -1,5 +1,9 @@
 /TODO: 今は誰のポートフォリオページでもshareが可能。自分自身のページにのみ設定すべきかは要検討。
-= render 'shared/share_button'
+.portfolio_menu
+  .twitter_share
+    = render 'shared/share_button', user: @user
+  = image_tag @user.twitter_icon, class: 'rounded_circle'
+    
 
 ul#sortable
   - @contents.each do |content|
