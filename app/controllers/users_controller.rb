@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # 最新の登録コンテンツをユーザー毎に取得
+    @contents = Content.order(updated_at: :desc).to_a.uniq { |c| c.user_id }
   end
 end
