@@ -1,12 +1,12 @@
 .header
   .header_inner
-    .li.header_left
+    .header_left
       = link_to root_path do
         = image_tag 'header_logo.png', class: 'header_logo'
-    .li.header_center
+    .header_center
       .button
         = link_to 'ユーザー一覧', users_path
-    .li.header_right
+    .header_right
       - if current_user.present?
         ul = image_tag current_user.twitter_icon, class: 'rounded_circle dropdown'
         #nav
