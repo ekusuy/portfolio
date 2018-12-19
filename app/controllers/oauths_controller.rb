@@ -4,10 +4,8 @@ class OauthsController < ApplicationController
   end
 
   def callback
-    # TODO：providerを判定するメソッドが必要。下記2つはとりあえず。
-    provider = 'twitter'
-    provider_name = 'twitter'
-    @user = login_from(provider)
+    twitter_access_denied && return  if params[:denied].present?
+    @user = login_from(params[:provider])
     # この時点でuser_attrs(@provider.user_info_mapping, @user_hash)にDBに必要なTwitter上のユーザー情報が入っている
     user_params = user_attrs(@provider.user_info_mapping, @user_hash)
     @user = User.new(user_params)
@@ -19,11 +17,17 @@ class OauthsController < ApplicationController
       @user.save
     end
     auto_login(@user)
-    redirect_to user_path(@user), notice: 'ログインしました'
+    redirect_to user_path(@user), success: 'ログインしました'
   end
 
   def destroy
     logout
-    redirect_to root_path
+    redirect_to root_path, success: 'ログアウトしました'
   end
+
+  private
+    def twitter_access_denied
+      redirect_to root_path, danger: 'ログインできませんでした'
+      return true
+    end
 end
