@@ -13,4 +13,5 @@
 //= require jquery3
 //= require jquery_ujs
 //= require activestorage
+//= require flash_hidden
 //= require cable
