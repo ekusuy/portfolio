@@ -247,11 +247,12 @@
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
+  transition: all ease 1s;
 }
 .hvr-curl-top-left:before {
   pointer-events: none;
   position: absolute;
-  content: '';
+  content: "";
   height: 0;
   width: 0;
   top: 0;
@@ -268,7 +269,9 @@
   -webkit-transition-property: width, height;
   transition-property: width, height;
 }
-.hvr-curl-top-left:hover:before, .hvr-curl-top-left:focus:before, .hvr-curl-top-left:active:before {
+.hvr-curl-top-left:hover:before,
+.hvr-curl-top-left:focus:before,
+.hvr-curl-top-left:active:before {
   //ページめくり余白にエディットボタンを挿入
   width: 90px;
   height: 90px;
