@@ -1,0 +1,20 @@
+.header
+  .header_inner
+    .header_left
+      = link_to root_path do
+        = image_tag 'header_logo.png', class: 'header_logo'
+    .header_center
+      .button
+        = link_to 'ユーザー一覧', users_path
+    .header_right
+      - if current_user.present?
+        .menu
+          = image_tag current_user.twitter_icon, class: 'rounded_circle'
+          ul
+            li
+              = link_to 'マイページ', user_path(current_user)
+            li
+              = link_to 'ログアウト', logout_path, method: :delete
+      - else
+        .menu
+          = link_to 'ログイン', auth_at_provider_path(provider: :twitter), class: 'login_btn'

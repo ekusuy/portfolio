@@ -1,0 +1,9 @@
+- if content.amazon_img.present?
+.user_index
+  .user_content
+    = link_to user_path(content.user) do
+      - image_tag content.amazon_img, class: 'content_index'
+  .user_icon
+    = image_tag content.user.twitter_icon, class: 'rounded_circle dropdown'
+    .user_name
+      = content.user.name
