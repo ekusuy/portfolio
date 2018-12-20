@@ -1,12 +1,12 @@
 .portfolio_menu
   .twitter_share
     = render 'shared/share_button'
-  = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creater?(current_user)
+  = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
 
 ul#sortable
   - @contents.each do |content|
     li.photo
-      - if @user.portfolio_creater?(current_user)
+      - if @user.portfolio_creator?(current_user)
         = link_to edit_user_content_path(content.user_id, content.position) do
           i.fa.fa-pencil-square-o.fa-5x
       = link_to content.create_link do
