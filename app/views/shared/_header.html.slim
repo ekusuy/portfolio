@@ -8,12 +8,13 @@
         = link_to 'ユーザー一覧', users_path
     .header_right
       - if current_user.present?
-        ul = image_tag current_user.twitter_icon, class: 'rounded_circle dropdown'
-        #nav
-          li
-            = link_to 'マイページ', user_path(current_user)
-          li
-            = link_to 'ログアウト', logout_path, method: :delete
+        .menu
+          = image_tag current_user.twitter_icon, class: 'rounded_circle'
+          ul
+            li
+              = link_to 'マイページ', user_path(current_user)
+            li
+              = link_to 'ログアウト', logout_path, method: :delete
       - else
-        ul#nav
-          = link_to 'ログイン', auth_at_provider_path(provider: :twitter)
+        .menu
+          = link_to 'ログイン', auth_at_provider_path(provider: :twitter), class: 'login_btn'
