@@ -1,7 +1,8 @@
 .portfolio_menu
+  .viewed_user
+    = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
   .twitter_share
     = render 'shared/share_button'
-  = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
 
 ul#sortable
   - @contents.each do |content|
