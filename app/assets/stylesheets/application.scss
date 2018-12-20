@@ -188,24 +188,6 @@
   max-height: 300px;
 }
 
-.header_right > #nav > li:hover {
-  background-color: rgb(177, 169, 169);
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.header_right > #nav > li > a {
-  text-decoration: none;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  line-height: 30px;
-  width: 130px;
-  height: 32px;
-  color: black;
-  display: inline-block;
-}
-
 .header_left {
   width: 150px;
   float: left;
