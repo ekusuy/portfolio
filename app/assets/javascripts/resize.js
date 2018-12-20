@@ -7,9 +7,7 @@ function trimming (amazon_image) {
   $(amazon_image).each(function(){
     let box = $(this);
     let image = $('img',this);
-    let box_width =$(box).width();
     let box_height =$(box).height();
-    let image_width =$(image).width();
     let image_height =$(image).height();
     //画像の縦横と枠の縦横を比べて分岐させ、画像の幅と高さを設定する
     if (image_height < box_height) { //画像の高さが枠より小さい場合は幅を100%にする
