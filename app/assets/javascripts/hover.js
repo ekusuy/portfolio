@@ -5,7 +5,5 @@ $(function() {
     $('.photo').addClass("hvr-curl-top-left");
   //ここにはマウスを離したときの動作を記述
   }, function() {
-    //付与したクラスを削除
-    $('.photo').removeClass("hvr-curl-top-left");
   });
 });
