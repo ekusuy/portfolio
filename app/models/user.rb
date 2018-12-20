@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :contents, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
+  def portfolio_creator?(current_user)
+    # ユニークキーでの比較を実施
+    self.twitter_id == current_user.twitter_id if current_user.present?
+  end
 end
