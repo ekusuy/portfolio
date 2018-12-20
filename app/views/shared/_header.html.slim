@@ -16,5 +16,5 @@
             li
               = link_to 'ログアウト', logout_path, method: :delete
       - else
-        ul#nav
-          = link_to 'ログイン', auth_at_provider_path(provider: :twitter)
+        .menu
+          = link_to 'ログイン', auth_at_provider_path(provider: :twitter), class: 'login_btn'
