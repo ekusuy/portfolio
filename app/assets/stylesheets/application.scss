@@ -146,6 +146,7 @@
   height: 70px;
   .menu {
     height: 70px;
+    width: 150px;
     :hover {
       background-color: rgb(38, 81, 161);
       transition: all ease 0.7s;
@@ -164,8 +165,8 @@
       overflow: hidden;
       width: 150px;
       transition: max-height ease 0.7s;
-      max-height: 0;
       text-align: center;
+      max-height: 0;
       li {
         text-align: center;
         height: 30px;
