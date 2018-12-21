@@ -36,11 +36,11 @@
 }
 .photo img {
   display: block;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
-  margin:auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
 }
 
 .photo i {
@@ -53,87 +53,87 @@
 
 .portfolio_menu {
   height: 50px;
-  margin-top: 100px;
+  margin-top: 30px;
+  position: relative;
   .twitter_share {
     text-align: center;
   }
-  img {
-    margin-left: 30px;
+  .viewed_user {
     position: absolute;
-    top: 80px;
-    left: 200px;
+    float: left;
+    left: 20px;
+    bottom: 5px;
   }
 }
 
 .header {
   height: 70px;
   width: 100%;
-  text-align: center;
   background-color: rgb(63, 194, 218);
   position: fixed; // ヘッダーを固定
   z-index: 1;
   top: 0; // 固定する位置
   left: 0; // 固定する位置
   right: 0; // 固定する位置
+  .header_innner {
+    width: 100%;
+    height: 70px;
+  }
 }
 
-.li {
-  display: inline;
-  padding: 0 5px;
-}
-
-.header_innner {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
+.header_left {
+  width: 150px;
   float: left;
+  display: inline-block;
+  .header_logo {
+    height: 70px;
+    width: 150px;
+  }
 }
 
 .header_center {
-  width: 70%;
-  text-align: center;
-}
-
-.header_center > .button {
-  float: left;
-  border: 1px solid white;
-  border-top: 0;
-  border-bottom: 0;
-  border-left: 0;
-  text-align: center;
-  margin-left: 0;
-}
-
-.header_center > .button:hover {
-  background-color: rgb(38, 81, 161);
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.header_center > .button > a {
-  text-decoration: none;
-  line-height: 70px;
-  color: white;
-  width: 97px;
   height: 70px;
+  text-align: center;
   display: inline-block;
+  float: left;
+  .button {
+    float: left;
+    border: 1px solid white;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    text-align: center;
+    margin-left: 0;
+    a {
+      text-decoration: none;
+      line-height: 70px;
+      color: white;
+      width: 97px;
+      height: 70px;
+      display: inline-block;
+    }
+    :hover {
+      background-color: rgb(38, 81, 161);
+      cursor: pointer;
+      transition: 0.5s;
+    }
+  }
 }
 
 .header_right {
-  width: 15%;
-  margin-right: 30px;
-  float: right;
+  margin-right: 10px;
   height: 70px;
+  display: inline-block;
+  float: right;
   .menu {
     height: 70px;
-    width: 150px;
+    text-align: center;
     :hover {
-      background-color: rgb(38, 81, 161);
       transition: all ease 0.7s;
     }
     a {
-      line-height: 70px;
+      border-radius: 50%;
+      height: 70px;
       display: block;
       text-decoration: none;
       text-align: center;
@@ -141,25 +141,21 @@
       padding: 0;
       color: white;
     }
-    img {
-      cursor: pointer;
-    }
     ul {
       padding: 0;
       list-style-type: none;
       overflow: hidden;
-      width: 150px;
       transition: max-height ease 0.7s;
       text-align: center;
+      width: 100px;
       max-height: 0;
       li {
         margin: 0px;
         padding: 0px;
         list-style-type: none;
-        line-height: 30px;
+        height: 30px;
         background-color: white;
         text-align: center;
-        width: 150px;
         border: 1px solid rgb(160, 156, 156);
         border-top: 0;
         border-radius: 3px;
@@ -168,11 +164,12 @@
         }
         a {
           display: block;
-          width: 150px;
           text-decoration: none;
-          line-height: 30px;
+          height: 30px;
           text-align: center;
           color: black;
+          font-size: 16px;
+          border-radius: 0%;
         }
       }
     }
@@ -183,14 +180,22 @@
   max-height: 300px;
 }
 
-.header_left {
-  width: 150px;
-  float: left;
+.main {
+  padding-top: 80px;
+  padding-left: 15%;
+  padding-right: 15%;
+  .portfolio_all {
+    height: 900px;
+  }
 }
 
-.header_logo {
-  height: 70px;
-  width: 150px;
+// スマホでポートフォリオを1画面に表示させるため
+@media screen and (max-width: 480px) {
+  .main {
+    .portfolio_all {
+      height: 500px;
+    }
+  }
 }
 
 .rounded_circle {
@@ -204,11 +209,6 @@
   display: inline-block;
 }
 
-.container {
-  margin: 90px;
-  height: 1000px;
-}
-
 .user_index {
   width: 300px;
   height: 400px;
@@ -217,31 +217,28 @@
   border-radius: 30px;
   float: left;
   text-align: center;
-}
-
-.user_index > .user_icon {
-  display: inline-block;
-  height: 30%;
-  width: 100%;
-  .rounded_circle {
-    text-align: center;
+  .user_icon {
+    display: inline-block;
+    height: 30%;
+    width: 100%;
+    .rounded_circle {
+      text-align: center;
+    }
   }
-}
-
-.user_index > .user_content {
-  height: 70%;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  img {
-    padding: 10px;
+  .user_content {
+    height: 70%;
+    display: inline-block;
     text-align: center;
+    width: 100%;
+    img {
+      padding: 10px;
+      text-align: center;
+    }
+    .content_index {
+      height: 250px;
+      width: 300px;
+    }
   }
-}
-
-.content_index {
-  height: 250px;
-  width: 300px;
 }
 
 /* Curl Top Left */
@@ -252,11 +249,12 @@
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
+  transition: all ease 1s;
 }
 .hvr-curl-top-left:before {
   pointer-events: none;
   position: absolute;
-  content: '';
+  content: "";
   height: 0;
   width: 0;
   top: 0;
@@ -273,7 +271,9 @@
   -webkit-transition-property: width, height;
   transition-property: width, height;
 }
-.hvr-curl-top-left:hover:before, .hvr-curl-top-left:focus:before, .hvr-curl-top-left:active:before {
+.hvr-curl-top-left:hover:before,
+.hvr-curl-top-left:focus:before,
+.hvr-curl-top-left:active:before {
   //ページめくり余白にエディットボタンを挿入
   width: 90px;
   height: 90px;

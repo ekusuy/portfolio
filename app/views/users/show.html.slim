@@ -1,17 +1,20 @@
 .portfolio_menu
+  .viewed_user
+    = link_to sns_account_link(@user.twitter_url) do
+      = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
   .twitter_share
     = render 'shared/share_button'
-  = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
 
-ul#sortable
-  - @contents.each do |content|
-    li.photo
-      - if @user.portfolio_creator?(current_user)
-        = link_to edit_user_content_path(content.user_id, content.position) do
-          i.fa.fa-pencil-square-o.fa-5x
-      = link_to content.create_link do
-        = image_tag content.content_img
-= javascript_include_tag "jquery-ui.min.js"
-= javascript_include_tag "replace.js"
-= javascript_include_tag "hover.js"
-= javascript_include_tag "resize.js"
+.portfolio_all
+  ul#sortable
+    - @contents.each do |content|
+      li.photo
+        - if @user.portfolio_creator?(current_user)
+          = link_to edit_user_content_path(content.user_id, content.position) do
+            i.fa.fa-pencil-square-o.fa-5x
+        = link_to content.create_link do
+          = image_tag content.content_img
+  = javascript_include_tag "jquery-ui.min.js"
+  = javascript_include_tag "replace.js"
+  = javascript_include_tag "hover.js"
+  = javascript_include_tag "resize.js"
