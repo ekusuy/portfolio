@@ -141,9 +141,6 @@
       padding: 0;
       color: white;
     }
-    img {
-      cursor: pointer;
-    }
     ul {
       padding: 0;
       list-style-type: none;
@@ -184,10 +181,21 @@
 }
 
 .main {
-  width: 100%;
   padding-top: 80px;
   padding-left: 15%;
   padding-right: 15%;
+  .portfolio_all {
+    height: 900px;
+  }
+}
+
+// スマホでポートフォリオを1画面に表示させるため
+@media screen and (max-width: 480px) {
+  .main {
+    .portfolio_all {
+      height: 500px;
+    }
+  }
 }
 
 .rounded_circle {

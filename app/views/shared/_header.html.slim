@@ -8,8 +8,7 @@
   .header_right
     - if current_user.present?
       .menu
-        = link_to sns_account_link(current_user.twitter_url) do
-          = image_tag current_user.twitter_icon, class: 'rounded_circle'
+        = image_tag current_user.twitter_icon, class: 'rounded_circle'
         ul
           li
             = link_to 'マイページ', user_path(current_user)
