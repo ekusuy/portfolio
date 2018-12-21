@@ -1,7 +1,8 @@
 - if @results.present?
   - @results.each do |result|
-    .list
-      = link_to image_tag(result.image_url, class: "search_result"),
+    .search-result
+      = link_to image_tag(result.search_image_set, class: "search_result"),
       user_content_path(result.update_params),
                         method: :patch
-      = result.title
+      .search-title
+        p = result.title
