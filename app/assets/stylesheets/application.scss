@@ -249,6 +249,7 @@
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
+  //商品の入れ替えがスムーズになるオプション（動作が重い）
   transition: all ease 1s;
 }
 .hvr-curl-top-left:before {
