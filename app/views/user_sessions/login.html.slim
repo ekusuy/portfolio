@@ -1,0 +1,15 @@
+.title_top
+  .title_logo
+    = image_tag 'title_logo', class: 'title_logo'
+.title_body
+  .introduction_top
+    h2 あなたの好きなものを公開してみませんか？
+    h8 あなたが選んだ9枚の画像をシェアできるサービスです。
+  .introduction_body
+    .introduction_img
+      = image_tag 'portfolio_sample_1', class: 'portfolio_img'
+      = image_tag 'portfolio_sample_2', class: 'portfolio_img'
+  .introduction_footer
+    h2 今すぐ使ってみる
+    .login_btn
+      =link_to 'Twitterでログイン', auth_at_provider_path(provider: :twitter), class: 'login_btn'

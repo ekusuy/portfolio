@@ -12,4 +12,8 @@ class Search_item
     { amazon_img: "#{image_url}",
       amazon_link: "#{url}" }
   end
+
+  def search_image_set
+    image_url.present? ? image_url : 'no_photo.jpg'
+  end
 end

@@ -3,7 +3,7 @@ class Content < ApplicationRecord
   belongs_to :user
 
   def content_img
-    amazon_img.present? ? amazon_img : 'sample.jpg'
+    amazon_img.present? ? amazon_img : 'no_photo.jpg'
   end
 
   def create_link
