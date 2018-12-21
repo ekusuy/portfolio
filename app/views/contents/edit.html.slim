@@ -1,13 +1,11 @@
-.content
-  #search-box
-    = form_tag(edit_user_content_path, method: :get) do
-      = text_field_tag :search, "",
-                        id: "book_search",
-                        name: "keyword",
-                        placeholder: "キーワードを打ち込んでください",
-                        style: "width: 200px;"
-      = button_tag "検索", title: "検索", type: "submit"
-  h2 検索結果
-  #search_list
-    = render partial: 'search_result'
+= form_tag(edit_user_content_path, method: :get, id: "search-box") do
+  = text_field_tag :search, "",
+                    id: "search-form",
+                    name: "keyword",
+                    placeholder: "キーワードを入力"
+  = button_tag type: 'submit', id: "search-btn" do
+    i.fa.fa-search
+h2 検索結果
+#search_list
+  = render partial: 'search_result'
 = javascript_include_tag "incremental_search.js"
