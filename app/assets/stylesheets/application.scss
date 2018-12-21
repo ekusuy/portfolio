@@ -189,7 +189,6 @@
   .portfolio_all {
     height: 900px;
   }
-  color: white;
 }
 
 // スマホでポートフォリオを1画面に表示させるため
@@ -213,6 +212,7 @@
 
 .title_body {
   text-align: center;
+  color: white;
   .introduction_top {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -265,37 +265,37 @@
   border-radius: 50%;
   height: 70px;
 }
-#search-box{
-  position:relative;
-  max-width:300px;
-  margin-bottom:20px;
+#search-box {
+  position: relative;
+  max-width: 300px;
+  margin-bottom: 20px;
 }
-#search-form{
-  height:45px;
-  padding:0 20px;
-  border-radius:25px;
-  outline:0;
-  background:#eee;
+#search-form {
+  height: 45px;
+  padding: 0 20px;
+  border-radius: 25px;
+  outline: 0;
+  background: #eee;
 }
-#search-btn{
-  height:45px;
-  width:50px;
-  position:absolute;
-  left:192px;
-  top:0;
-  background:#7fbfff;
-  color:#fff;
-  border:none;
-  border-radius:0 25px 25px 0;
+#search-btn {
+  height: 45px;
+  width: 50px;
+  position: absolute;
+  left: 192px;
+  top: 0;
+  background: #7fbfff;
+  color: #fff;
+  border: none;
+  border-radius: 0 25px 25px 0;
 }
-#search-btn .fa-search{
-  font-size:20px;
-  position:absolute;
-  top:30%;
-  left:30%;
+#search-btn .fa-search {
+  font-size: 20px;
+  position: absolute;
+  top: 30%;
+  left: 30%;
 }
-#search-btn:hover{
-  color:#888;
+#search-btn:hover {
+  color: #888;
 }
 
 .search-result {
@@ -303,16 +303,16 @@
   float: left;
   width: 100%;
 }
-.search-result:hover{
-  filter: alpha(opacity=60);        /* ie lt 8 */
-  -ms-filter: "alpha(opacity=60)";  /* ie 8 */
-  -moz-opacity:0.6;                 /* FF lt 1.5, Netscape */
-  -khtml-opacity: 0.6;              /* Safari 1.x */
-  opacity:0.6;
-  zoom:1;
+.search-result:hover {
+  filter: alpha(opacity=60); /* ie lt 8 */
+  -ms-filter: "alpha(opacity=60)"; /* ie 8 */
+  -moz-opacity: 0.6; /* FF lt 1.5, Netscape */
+  -khtml-opacity: 0.6; /* Safari 1.x */
+  opacity: 0.6;
+  zoom: 1;
 }
 .search-result img {
-  width:30%;
+  width: 30%;
   float: left;
 }
 .search-result p {
@@ -398,5 +398,3 @@
   font-family: FontAwesome;
   color: blue;
 }
-
-
