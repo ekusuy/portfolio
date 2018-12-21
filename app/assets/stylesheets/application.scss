@@ -322,9 +322,11 @@
   float: left;
   width: 100%;
 }
-.search-result img {
-  width:30%;
-  float: left;
+.search-result{
+  img {
+    width:30%;
+    float: left;
+  }
 }
 .search-result p {
   margin: 0;
