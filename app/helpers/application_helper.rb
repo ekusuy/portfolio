@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def sns_account_link(user)
-    "https://twitter.com/#{user}"
+  def sns_account_link(user_twitter_url)
+    "https://twitter.com/#{user_twitter_url)}"
   end
 end
