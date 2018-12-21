@@ -20,7 +20,7 @@ $(window).on('load', function() {
     }
   };
 
-  $('#book_search').on('keyup', function() {
+  $('#search-form').on('keyup', function() {
     // 文字列の先頭と末尾の空白を削除
     input = $.trim($(this).val());
     triggerAjax(input);
