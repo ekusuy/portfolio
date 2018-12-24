@@ -78,10 +78,12 @@
     width: 100%;
     display: flex;
     .header_left {
-      width: 150px;
       .header_logo {
         width: 150px;
-        height: 70px;
+        height: 69px;
+        @media screen and (max-width: 400px) {
+          width: 100px;
+        }
       }
     }
   }
@@ -429,6 +431,7 @@
   }
 }
 
+// ページ問わず位置を固定
 #flash_message {
   position: absolute;
   top: 90px;
