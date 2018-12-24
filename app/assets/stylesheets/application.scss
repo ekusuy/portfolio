@@ -14,6 +14,10 @@
  *= require_self
  */
 @import "font-awesome";
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic,
+    メイリオ, Meiryo, sans-serif;
+}
 // #FIXME　デザインは実装後に変更する必要あり。
 #sortable {
   margin: auto;
@@ -351,12 +355,16 @@
 
 .index_body {
   .user_index {
+    display: inline-block;
     margin: 10px;
     border: 1px solid skyblue;
-    max-width: 200px;
+    max-width: 300px;
     float: left;
     @media screen and (max-width: 600px) {
-      max-width: 100px;
+      max-width: 180px;
+    }
+    @media screen and (max-width: 400px) {
+      max-width: 250px;
     }
     .user_content {
       img {
