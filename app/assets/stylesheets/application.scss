@@ -24,6 +24,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 #sortable:after {
@@ -35,8 +36,8 @@ body {
   float: left; //横並び
   overflow: hidden; //はみ出し部分は非表示
   position: relative;
-  width: 33%;
-  height: 33%;
+  width: 33.3%;
+  height: 33.3%;
 }
 .photo img {
   display: block;
@@ -57,7 +58,6 @@ body {
 
 .portfolio_menu {
   height: 50px;
-  margin-top: 30px;
   position: relative;
   .twitter_share {
     text-align: center;
@@ -188,7 +188,7 @@ body {
 .top_page {
   background-color: rgb(63, 194, 218);
   padding-top: 100px;
-  padding-left: 15%;
+    padding-left: 15%;
   padding-right: 15%;
 }
 
@@ -372,7 +372,6 @@ body {
   font-family: FontAwesome;
   color: blue;
 }
-
 // SNSボタン
 .btn-social {
   width: 180px;
@@ -442,4 +441,26 @@ body {
   .header_logo {
     width: 100px;
   }
+}
+//title関連
+.edit_title:hover{
+  background: #eee;
+  cursor: pointer;
+}
+h2.title{
+  -webkit-text-size-adjust: 100%;
+  font-size: 4vw;
+  font-weight: bold;
+  font-family: serif;
+  padding-bottom: 15px;
+}
+#user-error-message{
+  display: none;
+}
+#edit_area{
+  display: none;
+}
+.title_submit{
+  display: none;
+  margin-bottom: 10px;
 }

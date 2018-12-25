@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_155246) do
+ActiveRecord::Schema.define(version: 2018_12_21_073340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_155246) do
     t.text "twitter_id", null: false
     t.string "twitter_icon"
     t.string "twitter_url", null: false
+    t.string "title", default: "クリックしてタイトルをつけて下さい", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
