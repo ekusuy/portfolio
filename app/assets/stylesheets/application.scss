@@ -204,6 +204,18 @@ body {
   }
 }
 
+.footer {
+  background: #888;
+  height: 80px;
+  .footer_menu {
+    display: inline-block;
+    text-align: center;
+    a {
+      color: white;
+    }
+  }
+}
+
 // topページ用(PC)
 .title_top {
   text-align: center;
