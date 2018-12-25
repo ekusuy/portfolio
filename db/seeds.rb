@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # 開発用のユーザーデータ
-# 50ユーザー作成
+# 50人のユーザーを作成する
 50.times do |n|
   User.create(name: "user_#{n}", twitter_id: "twitter_id_#{n}", twitter_url: "twitter_url_#{n}", twitter_icon: "https://pbs.twimg.com/profile_images/963249203639083008/7yEER84Q_normal.jpg")
 end
 
-# 50ユーザーが空のコンテンツ9個を生成し、その後positionが1のデータのみupdate
+# 50人のユーザーそれぞれが、(position: "1")のcontentのみupdateする
 50.times do |n|
   @user = User.find_by(twitter_id: "twitter_id_#{n}")
   (1..9).each { |m| @user.contents.build(position: m) }

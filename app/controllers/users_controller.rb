@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  PER = 10
+  PER = 30
 
   def show
     @user = User.find(params[:id])
