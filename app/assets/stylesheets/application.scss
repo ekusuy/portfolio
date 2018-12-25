@@ -206,12 +206,17 @@ body {
 
 .footer {
   background: #888;
-  height: 80px;
+  height: 50px;
   .footer_menu {
-    display: inline-block;
-    text-align: center;
-    a {
-      color: white;
+    height: 60%;
+    padding-top: 10px;
+    .terms {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      a {
+        color: white;
+      }
     }
   }
 }
