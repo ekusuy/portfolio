@@ -1,4 +1,6 @@
 .main
+  .portfolio_title
+    = render 'title', user: @user
   .portfolio_menu
     .viewed_user
       = link_to sns_account_link(@user.twitter_url) do

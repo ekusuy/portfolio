@@ -24,6 +24,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 #sortable:after {
@@ -35,8 +36,8 @@ body {
   float: left; //横並び
   overflow: hidden; //はみ出し部分は非表示
   position: relative;
-  width: 33%;
-  height: 33%;
+  width: 33.3%;
+  height: 33.3%;
 }
 .photo img {
   display: block;
@@ -57,7 +58,6 @@ body {
 
 .portfolio_menu {
   height: 50px;
-  margin-top: 30px;
   position: relative;
   .twitter_share {
     text-align: center;
@@ -84,9 +84,6 @@ body {
       .header_logo {
         width: 150px;
         height: 69px;
-        @media screen and (max-width: 400px) {
-          width: 100px;
-        }
       }
     }
   }
@@ -193,35 +190,17 @@ body {
   padding-top: 100px;
   padding-left: 15%;
   padding-right: 15%;
-  @media screen and (max-width: 600px) {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
 }
 
 .main {
   padding-top: 80px;
   padding-left: 15%;
   padding-right: 15%;
-  @media screen and (max-width: 600px) {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
     width: 600px;
     height: 600px;
-  }
-}
-
-// スマホでポートフォリオを1画面に表示させるため
-@media screen and (max-width: 600px) {
-  .main {
-    .portfolio_all {
-      width: 350px;
-      height: 350px;
-    }
   }
 }
 
@@ -255,33 +234,6 @@ body {
     padding-top: 15px;
     .login_btn {
       height: 50px;
-    }
-  }
-}
-
-// topページ用(スマホ)
-@media screen and (max-width: 600px) {
-  .title_top {
-    text-align: center;
-    .title_logo {
-      margin: auto;
-      margin-bottom: 0;
-      height: 200px;
-      width: 200px;
-    }
-  }
-
-  .title_body {
-    text-align: center;
-    .introduction_top {
-      margin-bottom: 15px;
-    }
-    .introduction_body {
-      .portfolio_img {
-        height: 150px;
-        width: 150px;
-        margin: 25px;
-      }
     }
   }
 }
@@ -428,7 +380,6 @@ body {
   font-family: FontAwesome;
   color: blue;
 }
-
 // SNSボタン
 .btn-social {
   width: 180px;
@@ -450,4 +401,74 @@ body {
   top: 90px;
   left: 45px;
   width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    // スマホでポートフォリオを1画面に表示させるため
+    .portfolio_all {
+      width: 350px;
+      height: 350px;
+    }
+  }
+  .top_page {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .title_top {
+    text-align: center;
+    .title_logo {
+      margin: auto;
+      margin-bottom: 0;
+      height: 200px;
+      width: 200px;
+    }
+  }
+  .title_body {
+    text-align: center;
+    .introduction_top {
+      margin-bottom: 15px;
+    }
+    .introduction_body {
+      .portfolio_img {
+        height: 150px;
+        width: 150px;
+        margin: 25px;
+      }
+    }
+  }
+  .user_index {
+    max-width: 180px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .user_index {
+    max-width: 250px;
+  }
+  .header_logo {
+    width: 100px;
+  }
+}
+//title関連
+.edit_title:hover {
+  background: #eee;
+  cursor: pointer;
+}
+h2.title {
+  -webkit-text-size-adjust: 100%;
+  font-size: 4vw;
+  font-weight: bold;
+  font-family: serif;
+  padding-bottom: 15px;
+}
+#user-error-message {
+  display: none;
+}
+#edit_area {
+  display: none;
+}
+.title_submit {
+  display: none;
+  margin-bottom: 10px;
 }
