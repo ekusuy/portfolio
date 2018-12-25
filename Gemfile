@@ -58,6 +58,9 @@ gem 'amazon-ecs'
 gem 'config'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
+# Pagination
+gem 'kaminari'
+
 group :development, :test do
   # Test
   gem 'factory_bot_rails'
