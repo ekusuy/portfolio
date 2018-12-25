@@ -2,6 +2,8 @@ class User < ApplicationRecord
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
+  validates :title, presence: true
+  validates :title, length: { maximum: 25 }
   has_many :authentications, dependent: :destroy
   has_many :contents, dependent: :destroy
   accepts_nested_attributes_for :authentications
