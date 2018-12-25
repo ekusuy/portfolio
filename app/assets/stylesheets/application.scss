@@ -20,6 +20,7 @@
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 #sortable:after {
@@ -31,8 +32,8 @@
   float: left; //横並び
   overflow: hidden; //はみ出し部分は非表示
   position: relative;
-  width: 33%;
-  height: 33%;
+  width: 33.3%;
+  height: 33.3%;
 }
 .photo img {
   display: block;
@@ -53,7 +54,6 @@
 
 .portfolio_menu {
   height: 50px;
-  margin-top: 30px;
   position: relative;
   .twitter_share {
     text-align: center;
@@ -69,7 +69,7 @@
 .header {
   height: 70px;
   width: 100%;
-  background-color: rgb(63, 194, 218);
+  background:linear-gradient(to bottom right, #04BACC, #68d5e0);
   position: fixed; // ヘッダーを固定
   z-index: 1;
   top: 0; // 固定する位置
@@ -182,7 +182,7 @@
 }
 
 .main {
-  background-color: rgb(63, 194, 218);
+  background:linear-gradient(to bottom right, #04BACC, #68d5e0);
   padding-top: 80px;
   padding-left: 15%;
   padding-right: 15%;
@@ -397,4 +397,25 @@
   font-size: 300%;
   font-family: FontAwesome;
   color: blue;
+}
+//title関連
+.edit_title:hover{
+  background: #eee;
+  cursor: pointer;
+}
+h2.title{
+  -webkit-text-size-adjust: 100%;
+  font-size: 4vw;
+  font-weight: bold;
+  font-family: serif;
+}
+#user-error-message{
+  display: none;
+}
+#edit_area{
+  display: none;
+}
+.title_submit{
+  display: none;
+  margin-bottom: 10px;
 }
