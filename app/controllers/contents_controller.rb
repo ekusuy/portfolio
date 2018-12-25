@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   include AmazonSearchModule
   before_action :set_content
   before_action :authentication_check
-  
+
   def edit
     @results = search_item_from_amazon(params[:keyword])
   end
