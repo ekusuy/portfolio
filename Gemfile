@@ -60,6 +60,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 # Pagination
 gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 group :development, :test do
   # Test
