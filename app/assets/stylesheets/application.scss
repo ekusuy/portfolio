@@ -359,7 +359,6 @@ body {
     margin: 10px;
     border: 1px solid skyblue;
     max-width: 300px;
-    float: left;
     @media screen and (max-width: 600px) {
       max-width: 180px;
     }
@@ -382,6 +381,9 @@ body {
       }
     }
   }
+}
+.index_footer {
+  margin: auto;
 }
 
 /* Curl Top Left */
