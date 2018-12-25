@@ -10,10 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require_tree
  *= require_self
  */
 @import "font-awesome";
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic,
+    メイリオ, Meiryo, sans-serif;
+}
 // #FIXME　デザインは実装後に変更する必要あり。
 #sortable {
   margin: auto;
@@ -60,7 +64,6 @@
   }
   .viewed_user {
     position: absolute;
-    float: left;
     left: 20px;
     bottom: 5px;
   }
@@ -69,34 +72,25 @@
 .header {
   height: 70px;
   width: 100%;
+  z-index: 1;
   background-color: rgb(63, 194, 218);
   position: fixed; // ヘッダーを固定
-  z-index: 1;
   top: 0; // 固定する位置
-  left: 0; // 固定する位置
-  right: 0; // 固定する位置
   border-bottom: 1px solid white;
-  .header_innner {
+  .header_inner {
     width: 100%;
-    height: 70px;
-  }
-}
-
-.header_left {
-  width: 150px;
-  float: left;
-  display: inline-block;
-  .header_logo {
-    height: 70px;
-    width: 150px;
+    display: flex;
+    .header_left {
+      .header_logo {
+        width: 150px;
+        height: 69px;
+      }
+    }
   }
 }
 
 .header_center {
-  height: 70px;
   text-align: center;
-  display: inline-block;
-  float: left;
   .button {
     float: left;
     border: 1px solid white;
@@ -122,15 +116,25 @@
 }
 
 .header_right {
+  margin-left: auto; //右寄せ
   margin-right: 10px;
-  height: 70px;
-  display: inline-block;
-  float: right;
   .menu {
     height: 70px;
     text-align: center;
+    display: table-cell;
+    vertical-align: middle;
     :hover {
       transition: all ease 0.7s;
+    }
+    .login_btn {
+      display: inline-block;
+      height: 30px;
+      a {
+        display: inline-block;
+        height: 30px;
+        border-radius: 1%;
+        width: 100px;
+      }
     }
     a {
       border-radius: 50%;
@@ -140,7 +144,6 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      color: white;
     }
     ul {
       padding: 0;
@@ -156,6 +159,7 @@
         list-style-type: none;
         height: 30px;
         background-color: white;
+        opacity: 0.8;
         text-align: center;
         border: 1px solid rgb(160, 156, 156);
         border-top: 0;
@@ -181,22 +185,22 @@
   max-height: 300px;
 }
 
-.main {
+.top_page {
   background-color: rgb(63, 194, 218);
+  padding-top: 100px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.main {
   padding-top: 80px;
   padding-left: 15%;
   padding-right: 15%;
+  // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
-    height: 900px;
-  }
-}
-
-// スマホでポートフォリオを1画面に表示させるため
-@media screen and (max-width: 480px) {
-  .main {
-    .portfolio_all {
-      height: 500px;
-    }
+    margin: auto;
+    width: 600px;
+    height: 600px;
   }
 }
 
@@ -220,8 +224,8 @@
   .introduction_body {
     margin: auto;
     .portfolio_img {
-      height: 40%;
-      width: 40%;
+      height: 250px;
+      width: 250px;
       margin: 25px;
     }
   }
@@ -230,33 +234,6 @@
     padding-top: 15px;
     .login_btn {
       height: 50px;
-    }
-  }
-}
-
-// topページ用(スマホ)
-@media screen and (max-width: 400px) {
-  .title_top {
-    text-align: center;
-    .title_logo {
-      margin: auto;
-      margin-bottom: 0;
-      height: 200px;
-      width: 200px;
-    }
-  }
-
-  .title_body {
-    text-align: center;
-    .introduction_top {
-      margin-bottom: 15px;
-    }
-    .introduction_body {
-      .portfolio_img {
-        height: 150px;
-        width: 150px;
-        margin: 25px;
-      }
     }
   }
 }
@@ -324,34 +301,31 @@
   float: left;
 }
 
-.user_index {
-  width: 300px;
-  height: 400px;
-  margin: 10px;
-  border: 1px solid skyblue;
-  border-radius: 30px;
-  float: left;
+.index_header {
   text-align: center;
-  .user_icon {
+}
+
+.index_body {
+  .user_index {
     display: inline-block;
-    height: 30%;
-    width: 100%;
-    .rounded_circle {
-      text-align: center;
+    margin: 10px;
+    border: 1px solid skyblue;
+    max-width: 300px;
+    float: left;
+    .user_content {
+      img {
+        max-width: 100%;
+        text-align: center;
+      }
+      .content_index {
+      }
     }
-  }
-  .user_content {
-    height: 70%;
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    img {
-      padding: 10px;
+    .user_icon {
       text-align: center;
-    }
-    .content_index {
-      height: 250px;
-      width: 300px;
+      a {
+        img {
+        }
+      }
     }
   }
 }
@@ -397,4 +371,75 @@
   font-size: 300%;
   font-family: FontAwesome;
   color: blue;
+}
+
+// SNSボタン
+.btn-social {
+  width: 180px;
+  color: white;
+}
+
+// Twitter
+.btn-tw {
+  background-color: #00aced;
+  border: 0.3px solid white;
+  i {
+    margin-right: 5px;
+  }
+}
+
+// ページ問わず位置を固定
+#flash_message {
+  position: absolute;
+  top: 90px;
+  left: 45px;
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    // スマホでポートフォリオを1画面に表示させるため
+    .portfolio_all {
+      width: 350px;
+      height: 350px;
+    }
+  }
+  .top_page {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .title_top {
+    text-align: center;
+    .title_logo {
+      margin: auto;
+      margin-bottom: 0;
+      height: 200px;
+      width: 200px;
+    }
+  }
+  .title_body {
+    text-align: center;
+    .introduction_top {
+      margin-bottom: 15px;
+    }
+    .introduction_body {
+      .portfolio_img {
+        height: 150px;
+        width: 150px;
+        margin: 25px;
+      }
+    }
+  }
+  .user_index {
+    max-width: 180px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .user_index {
+    max-width: 250px;
+  }
+  .header_logo {
+    width: 100px;
+  }
 }

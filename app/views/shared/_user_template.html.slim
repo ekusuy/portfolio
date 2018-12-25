@@ -3,6 +3,7 @@
   .user_content
     = link_to user_path(content.user) do
       - image_tag content.content_img, class: 'content_index'
+  .user_title タイトル
   .user_icon
     = link_to sns_account_link(content.user.twitter_url) do
       = image_tag content.user.twitter_icon, class: 'rounded_circle dropdown'
