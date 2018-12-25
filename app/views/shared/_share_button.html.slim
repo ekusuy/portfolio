@@ -1,2 +1,2 @@
 script.async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-a.twitter-share-button data-hashtags="portfolio" data-lang="ja" data-show-count="false" data-size="large" data-text=sns_share_text(@user) data-url=current_page href="https://twitter.com/share?ref_src=twsrc%5Etfw" Tweet
+= link_to 'Tweet', 'https://twitter.com/share?ref_src=twsrc%5Etfw', class: 'twitter-share-button',data: { hashtags: 'portfolio', lang: 'ja', size: 'large', text: sns_share_text(@user), url: current_page, show: { count: false } }
