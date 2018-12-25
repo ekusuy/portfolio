@@ -1,1 +1,7 @@
-= render partial: 'shared/user_template', collection: @contents, as: 'content'
+.main
+  .index_header
+    h3 ユーザー一覧（新着登録順）
+  .index_body
+    = render partial: 'shared/user_template', collection: @contents_all, as: 'content'
+    .index_footer
+      = paginate @contents_all
