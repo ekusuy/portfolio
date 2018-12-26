@@ -470,10 +470,15 @@ body {
   }
 }
 //title関連
-.edit_title:hover {
+.title:hover{
   background: #eee;
   cursor: pointer;
 }
+.title:hover > .btn-light{
+  background: #eee;
+  cursor: pointer;
+}
+
 h2.title {
   -webkit-text-size-adjust: 100%;
   font-size: 4vw;
@@ -491,3 +496,8 @@ h2.title {
   display: none;
   margin-bottom: 10px;
 }
+.btn-light{
+  background-color: white;
+  border:0;
+}
+

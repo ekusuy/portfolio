@@ -16,7 +16,7 @@ $(function(){
         }
       }).done(function (data) {
         // 返却されたJSONをもとに書き換え
-        $('#title_text h2').text(data['title']);
+        $('#btn_title').text(data['title']);
         form_toggle();
         error_msg.hide();
       }).fail(function(data){

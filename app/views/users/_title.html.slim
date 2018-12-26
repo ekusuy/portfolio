@@ -1,5 +1,5 @@
 #title_text class=("#{'edit_title' if user.portfolio_creator?(current_user)}")
-  h2.title.text-center = user.title
+  h2.title.text-center = button_tag user.title, id: "btn_title" ,class: "btn-light"
 #user-error-message.alert.alert-danger
 textarea#edit_area.form-group.mb-30.form-control = user.title
 .text-center = button_tag "編集完了", class: "edit_title title_submit btn btn-primary"
