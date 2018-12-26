@@ -5,9 +5,8 @@
     .viewed_user
       = link_to sns_account_link(@user.twitter_url) do
         = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
-    .twitter_share
+    .twitter_share#twitter_share
       = render 'shared/share_button'
-      
   .portfolio_all
     ul#sortable
       - @contents.each do |content|

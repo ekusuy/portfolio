@@ -59,7 +59,7 @@ body {
 .portfolio_menu {
   height: 50px;
   position: relative;
-  .twitter_share {
+  #twitter_share {
     text-align: center;
   }
   .viewed_user {
@@ -470,11 +470,11 @@ body {
   }
 }
 //title関連
-.title:hover{
+.title:hover {
   background: #eee;
   cursor: pointer;
 }
-.title:hover > .btn-light{
+.title:hover > .btn-light {
   background: #eee;
   cursor: pointer;
 }
@@ -496,8 +496,7 @@ h2.title {
   display: none;
   margin-bottom: 10px;
 }
-.btn-light{
+.btn-light {
   background-color: white;
-  border:0;
+  border: 0;
 }
-
