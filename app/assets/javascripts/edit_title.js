@@ -20,6 +20,7 @@ $(function() {
           $("#btn_title").text(data["title"]);
           form_toggle();
           error_msg.hide();
+          location.reload();
         })
         .fail(function(data) {
           // エラーの場合はエラーメッセージを表示
