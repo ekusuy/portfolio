@@ -34,7 +34,7 @@ body {
 
 .photo {
   float: left; //横並び
-  overflow: hidden; //はみ出し部分は非表示
+  list-style: none;
   position: relative;
   width: 33.3%;
   height: 33.3%;
@@ -275,7 +275,7 @@ body {
   height: 45px;
   width: 50px;
   position: absolute;
-  left: 192px;
+  left: 165px;
   top: 0;
   background: #7fbfff;
   color: #fff;

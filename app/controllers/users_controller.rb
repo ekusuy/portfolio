@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   PER = 30
 
   def show
-    @contents = Content.where(user_id: @user.id) if @user
+    @contents = Content.where(user_id: @user.id).order(position: :asc) if @user
   end
 
   def index
