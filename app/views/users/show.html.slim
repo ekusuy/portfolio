@@ -1,15 +1,17 @@
 .main
-  .portfolio_title
+  .portfolio_title data-intro=("クリックして好きなタイトルを設定しよう！") data-step="2"
     = render 'title', user: @user
   .portfolio_menu
     .viewed_user
       = link_to sns_account_link(@user.twitter_url) do
         = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
-    .twitter_share
+    .twitter_share data-intro=("設定が終わったらツイッターでシェアしよう!!") data-step="3"
       = render 'shared/share_button'
-      
+    - if @user.portfolio_creator?(current_user)
+      .tutorial
+        = button_tag "使い方", class: "btn btn-info"
   .portfolio_all
-    ul#sortable
+    ul#sortable data-intro=("画像の左上の編集ボタンから検索画面に移動してAmazonの画像を設定しよう") data-step="1"
       - @contents.each do |content|
         li.photo
           - if @user.portfolio_creator?(current_user)
