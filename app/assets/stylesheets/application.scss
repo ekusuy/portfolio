@@ -206,12 +206,26 @@ body {
   padding-right: 15%;
   padding-bottom: 15px;
   overflow: auto;
+  font-family: auto;
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
     width: 600px;
     height: 600px;
   }
+}
+
+#btn_title {
+  font-family: auto;
+}
+.index_header {
+  font-family: auto;
+}
+.index_body {
+  font-family: auto;
+}
+.introjs-tooltip {
+  font-family: auto;
 }
 
 .footer {
@@ -433,6 +447,7 @@ body {
 
 @media screen and (max-width: 600px) {
   .main {
+    font-family: auto;
     padding-left: 5px;
     padding-right: 5px;
     // スマホでポートフォリオを1画面に表示させるため
