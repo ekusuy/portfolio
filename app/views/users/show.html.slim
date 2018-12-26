@@ -13,7 +13,7 @@
   .portfolio_all
     ul#sortable data-intro=("画像の左上の編集ボタンから検索画面に移動してAmazonの画像を設定しよう") data-step="1"
       - @contents.each do |content|
-        li.photo
+        li.photo class=("#{'hvr-curl-top-left' if @user.portfolio_creator?(current_user)}")
           - if @user.portfolio_creator?(current_user)
             = link_to edit_user_content_path(content.user_id, content.position) do
               i.fa.fa-pencil-square-o.fa-5x

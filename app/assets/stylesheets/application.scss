@@ -396,8 +396,8 @@ body {
 .hvr-curl-top-left:focus:before,
 .hvr-curl-top-left:active:before {
   //ページめくり余白にエディットボタンを挿入
-  width: 90px;
-  height: 90px;
+  width: 45%;
+  height: 45%;
   content: "\f044";
   font-size: 300%;
   font-family: FontAwesome;
