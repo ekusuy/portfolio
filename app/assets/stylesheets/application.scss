@@ -13,6 +13,7 @@
  *= require_tree
  *= require_self
  */
+@import "introjs";
 @import "font-awesome";
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic,
@@ -64,8 +65,13 @@ body {
   }
   .viewed_user {
     position: absolute;
-    left: 20px;
+    left: 20%;
     bottom: 5px;
+  }
+  .tutorial {
+    position: absolute;
+    right: 20%;
+    bottom: 20px;
   }
 }
 
@@ -391,8 +397,8 @@ body {
 .hvr-curl-top-left:focus:before,
 .hvr-curl-top-left:active:before {
   //ページめくり余白にエディットボタンを挿入
-  width: 90px;
-  height: 90px;
+  width: 45%;
+  height: 45%;
   content: "\f044";
   font-size: 300%;
   font-family: FontAwesome;
@@ -429,6 +435,16 @@ body {
     .portfolio_all {
       width: 350px;
       height: 350px;
+    }
+    .viewed_user {
+      position: absolute;
+      left: 30px;
+      bottom: 5px;
+    }
+    .tutorial {
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
     }
   }
   .top_page {
