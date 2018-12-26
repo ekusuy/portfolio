@@ -82,7 +82,6 @@ body {
   background-color: rgb(63, 194, 218);
   position: fixed; // ヘッダーを固定
   top: 0; // 固定する位置
-  border-bottom: 1px solid white;
   .header_inner {
     width: 100%;
     display: flex;
@@ -123,12 +122,15 @@ body {
 
 .header_right {
   margin-left: auto; //右寄せ
-  margin-right: 10px;
+  margin-right: 15px;
   .menu {
     height: 70px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+    img {
+      height: 95%;
+    }
     :hover {
       transition: all ease 0.7s;
     }
@@ -144,7 +146,7 @@ body {
     }
     a {
       border-radius: 50%;
-      height: 70px;
+      height: 60px;
       display: block;
       text-decoration: none;
       text-align: center;
@@ -488,7 +490,11 @@ body {
     max-width: 250px;
   }
   .header_logo {
-    width: 100px;
+    max-width: 130px;
+  }
+  .portfolio_all {
+    max-width: 300px;
+    max-height: 300px;
   }
 }
 //title関連
