@@ -212,10 +212,15 @@ body {
     padding-top: 10px;
     .terms {
       display: flex;
-      justify-content: center;
-      text-align: center;
       a {
         color: white;
+      }
+      #terms {
+        margin-left: auto;
+      }
+      #contact {
+        margin-left: 5px;
+        margin-right: 10px;
       }
     }
   }
