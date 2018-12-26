@@ -202,6 +202,7 @@ body {
   padding-top: 80px;
   padding-left: 15%;
   padding-right: 15%;
+  padding-bottom: 15px;
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
@@ -486,11 +487,11 @@ body {
   }
 }
 //title関連
-.title:hover{
+.title:hover {
   background: #eee;
   cursor: pointer;
 }
-.title:hover > .btn-light{
+.title:hover > .btn-light {
   background: #eee;
   cursor: pointer;
 }
@@ -512,8 +513,7 @@ h2.title {
   display: none;
   margin-bottom: 10px;
 }
-.btn-light{
+.btn-light {
   background-color: white;
-  border:0;
+  border: 0;
 }
-
