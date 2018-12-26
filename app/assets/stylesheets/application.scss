@@ -206,7 +206,7 @@ body {
   padding-right: 15%;
   padding-bottom: 15px;
   overflow: auto;
-  font-family: auto;
+  font-family: auto, sans-serif;
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
@@ -216,16 +216,16 @@ body {
 }
 
 #btn_title {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 .index_header {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 .index_body {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 .introjs-tooltip {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 
 .footer {
