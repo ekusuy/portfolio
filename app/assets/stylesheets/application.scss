@@ -13,6 +13,7 @@
  *= require_tree
  *= require_self
  */
+@import "introjs";
 @import "font-awesome";
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic,
@@ -64,8 +65,13 @@ body {
   }
   .viewed_user {
     position: absolute;
-    left: 20px;
+    left: 20%;
     bottom: 5px;
+  }
+  .tutorial {
+    position: absolute;
+    right: 20%;
+    bottom: 20px;
   }
 }
 
@@ -196,11 +202,35 @@ body {
   padding-top: 80px;
   padding-left: 15%;
   padding-right: 15%;
+  padding-bottom: 15px;
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
     width: 600px;
     height: 600px;
+  }
+}
+
+.footer {
+  background: #888;
+  height: 50px;
+  .footer_menu {
+    height: 60%;
+    padding-top: 10px;
+    .terms {
+      display: flex;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      #terms {
+        margin-left: auto;
+      }
+      #contact {
+        margin-left: 5px;
+        margin-right: 10px;
+      }
+    }
   }
 }
 
@@ -313,7 +343,8 @@ body {
     max-width: 300px;
     .user_content {
       img {
-        max-width: 100%;
+        max-width: 250px;
+        max-height: 250px;
         text-align: center;
       }
       .content_index {
@@ -367,8 +398,8 @@ body {
 .hvr-curl-top-left:focus:before,
 .hvr-curl-top-left:active:before {
   //ページめくり余白にエディットボタンを挿入
-  width: 90px;
-  height: 90px;
+  width: 45%;
+  height: 45%;
   content: "\f044";
   font-size: 300%;
   font-family: FontAwesome;
@@ -405,6 +436,16 @@ body {
     .portfolio_all {
       width: 350px;
       height: 350px;
+    }
+    .viewed_user {
+      position: absolute;
+      left: 30px;
+      bottom: 5px;
+    }
+    .tutorial {
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
     }
   }
   .top_page {
@@ -447,10 +488,15 @@ body {
   }
 }
 //title関連
-.edit_title:hover {
+.title:hover {
   background: #eee;
   cursor: pointer;
 }
+.title:hover > .btn-light {
+  background: #eee;
+  cursor: pointer;
+}
+
 h2.title {
   -webkit-text-size-adjust: 100%;
   font-size: 4vw;
@@ -467,4 +513,8 @@ h2.title {
 .title_submit {
   display: none;
   margin-bottom: 10px;
+}
+.btn-light {
+  background-color: white;
+  border: 0;
 }

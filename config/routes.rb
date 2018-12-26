@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :contents, param: :position, only: %i[edit update]
   end
   delete '/logout', to: 'oauths#destroy'
+  get '/terms', to: 'user_sessions#terms'
   root 'user_sessions#login'
 end

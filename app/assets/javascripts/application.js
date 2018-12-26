@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require activestorage
 //= require flash_hidden
+//= require intro
 //= require cable
