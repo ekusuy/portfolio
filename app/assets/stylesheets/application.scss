@@ -204,6 +204,29 @@ body {
   }
 }
 
+.footer {
+  background: #888;
+  height: 50px;
+  .footer_menu {
+    height: 60%;
+    padding-top: 10px;
+    .terms {
+      display: flex;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      #terms {
+        margin-left: auto;
+      }
+      #contact {
+        margin-left: 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
 // topページ用(PC)
 .title_top {
   text-align: center;
