@@ -357,13 +357,17 @@ body {
     display: inline-block;
     margin: 10px;
     border: 1px solid skyblue;
-    width: 300px;
-    height: 400px;
+    max-width: 300px;
+    max-height: 380px;
     .user_content {
       text-align: center;
-      img {
-        width: 250px;
-        height: 250px;
+      height: 250px;
+      a {
+        line-height: 250px;
+        img {
+          max-width: 250px;
+          max-height: 250px;
+        }
       }
     }
     .user_icon {
