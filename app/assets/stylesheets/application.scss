@@ -82,7 +82,6 @@ body {
   background-color: rgb(63, 194, 218);
   position: fixed; // ヘッダーを固定
   top: 0; // 固定する位置
-  border-bottom: 1px solid white;
   .header_inner {
     width: 100%;
     display: flex;
@@ -123,12 +122,15 @@ body {
 
 .header_right {
   margin-left: auto; //右寄せ
-  margin-right: 10px;
+  margin-right: 15px;
   .menu {
     height: 70px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+    img {
+      height: 95%;
+    }
     :hover {
       transition: all ease 0.7s;
     }
@@ -144,7 +146,7 @@ body {
     }
     a {
       border-radius: 50%;
-      height: 70px;
+      height: 60px;
       display: block;
       text-decoration: none;
       text-align: center;
@@ -203,12 +205,27 @@ body {
   padding-left: 15%;
   padding-right: 15%;
   padding-bottom: 15px;
+  overflow: auto;
+  font-family: auto, sans-serif;
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
     width: 600px;
     height: 600px;
   }
+}
+
+#btn_title {
+  font-family: auto, sans-serif;
+}
+.index_header {
+  font-family: auto, sans-serif;
+}
+.index_body {
+  font-family: auto, sans-serif;
+}
+.introjs-tooltip {
+  font-family: auto, sans-serif;
 }
 
 .footer {
@@ -288,7 +305,7 @@ body {
   height: 45px;
   width: 50px;
   position: absolute;
-  left: 165px;
+  left: 180px;
   top: 0;
   background: #7fbfff;
   color: #fff;
@@ -341,13 +358,16 @@ body {
     margin: 10px;
     border: 1px solid skyblue;
     max-width: 300px;
+    max-height: 380px;
     .user_content {
-      img {
-        max-width: 250px;
-        max-height: 250px;
-        text-align: center;
-      }
-      .content_index {
+      text-align: center;
+      height: 250px;
+      a {
+        line-height: 250px;
+        img {
+          max-width: 250px;
+          max-height: 250px;
+        }
       }
     }
     .user_icon {
@@ -430,6 +450,7 @@ body {
 
 @media screen and (max-width: 600px) {
   .main {
+    font-family: auto;
     padding-left: 5px;
     padding-right: 5px;
     // スマホでポートフォリオを1画面に表示させるため
@@ -474,8 +495,17 @@ body {
       }
     }
   }
+  .index_body {
+    text-align: center;
+  }
   .user_index {
     max-width: 180px;
+  }
+  #search-btn {
+    left: 200px;
+  }
+  #search-form {
+    width: 250px;
   }
 }
 
@@ -484,7 +514,11 @@ body {
     max-width: 250px;
   }
   .header_logo {
-    width: 100px;
+    max-width: 130px;
+  }
+  .portfolio_all {
+    max-width: 300px;
+    max-height: 300px;
   }
 }
 //title関連
