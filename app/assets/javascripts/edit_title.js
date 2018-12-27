@@ -21,7 +21,7 @@ $(function() {
           form_toggle();
           error_msg.hide();
           let title = data["title"] + "を公開します！";
-          let button = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="' + title + 'data-hashtags="portfolio" data-lang="ja" data-url=' + location.href + ' data-show-count="false">Tweet</a>';
+          let button = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="' + title + '"data-hashtags="portfolio" data-lang="ja" data-url=' + location.href + ' data-show-count="false">Tweet</a>';
           $('.twitter_share').html(button);
           twttr.widgets.load();
         })
