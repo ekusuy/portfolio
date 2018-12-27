@@ -206,7 +206,7 @@ body {
   padding-right: 15%;
   padding-bottom: 15px;
   overflow: auto;
-  font-family: auto;
+  font-family: auto, sans-serif;
   // PCでポートフォリオを１画面に表示させるため
   .portfolio_all {
     margin: auto;
@@ -216,16 +216,16 @@ body {
 }
 
 #btn_title {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 .index_header {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 .index_body {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 .introjs-tooltip {
-  font-family: auto;
+  font-family: auto, sans-serif;
 }
 
 .footer {
@@ -358,13 +358,16 @@ body {
     margin: 10px;
     border: 1px solid skyblue;
     max-width: 300px;
+    max-height: 380px;
     .user_content {
-      img {
-        max-width: 250px;
-        max-height: 250px;
-        text-align: center;
-      }
-      .content_index {
+      text-align: center;
+      height: 250px;
+      a {
+        line-height: 250px;
+        img {
+          max-width: 250px;
+          max-height: 250px;
+        }
       }
     }
     .user_icon {
@@ -497,6 +500,12 @@ body {
   }
   .user_index {
     max-width: 180px;
+  }
+  #search-btn {
+    left: 200px;
+  }
+  #search-form {
+    width: 250px;
   }
 }
 
