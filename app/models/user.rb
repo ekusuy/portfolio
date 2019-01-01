@@ -12,4 +12,8 @@ class User < ApplicationRecord
     # ユニークキーでの比較を実施
     self.twitter_id == current_user.twitter_id if current_user.present?
   end
+
+  def twitter_user_info_updated?(twitter_user)
+    name != twitter_user.name || twitter_icon != twitter_user.twitter_icon || twitter_url != twitter_user.twitter_url
+  end
 end
