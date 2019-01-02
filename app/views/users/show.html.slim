@@ -3,7 +3,7 @@
     = render 'title', user: @user
   .portfolio_menu
     .viewed_user
-      = link_to sns_account_link(@user.twitter_url) do
+      = link_to sns_account_link(@user.twitter_url), target: '_new' do
         = image_tag @user.twitter_icon, class: 'rounded_circle' unless @user.portfolio_creator?(current_user)
     .twitter_share data-intro=("設定が終わったらツイッターでシェアしよう!!") data-step="3"
       = render 'shared/share_button'
@@ -17,6 +17,6 @@
           - if @user.portfolio_creator?(current_user)
             = link_to edit_user_content_path(content.user_id, content.position) do
               i.fa.fa-pencil-square-o.fa-5x
-          = link_to content.create_link do
+          = link_to content.create_link, target: "#{ '_new' if content.amazon_link.present? }" do
             = image_tag content.content_img
     = javascript_include_tag "show.js"
