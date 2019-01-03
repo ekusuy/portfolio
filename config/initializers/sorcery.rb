@@ -114,7 +114,6 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.callback_url = ENV["TWITTER_CALLBACK_URL"]
   config.twitter.user_info_mapping = {
     name: 'name',
-    email: 'email',
     twitter_id: 'id',
     twitter_icon: 'profile_image_url_https',
     twitter_url: 'screen_name'
@@ -224,7 +223,7 @@ Rails.application.config.sorcery.configure do |config|
     # specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
     #
-    # user.username_attribute_names =
+    user.username_attribute_names = :twitter_id
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
