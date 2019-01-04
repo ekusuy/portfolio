@@ -10,6 +10,8 @@ $(document).on('click','.tutorial', function() {
     'prevLabel': '戻る',
     'skipLabel': 'スキップ',
     'doneLabel': 'やめる',
+    'hidePrev': true,
+    'hideNext' : true,
   }).start();
 });
 (function(f) {
