@@ -6,7 +6,7 @@
   .user_title
     = content.user.title
   .user_icon
-    = link_to sns_account_link(content.user.twitter_url) do
+    = link_to sns_account_link(content.user.twitter_url), target: '_new' do
       = image_tag content.user.twitter_icon, class: 'rounded_circle dropdown'
       .user_name
         = content.user.name

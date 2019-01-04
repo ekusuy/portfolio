@@ -5,7 +5,14 @@
  * Copyright (C) 2017 Afshin Mehrabani (@afshinmeh)
  */
 $(document).on('click','.tutorial', function() {
-  introJs().start();
+  introJs().setOptions({
+    'nextLabel': '進む',
+    'prevLabel': '戻る',
+    'skipLabel': 'スキップ',
+    'doneLabel': 'やめる',
+    'hidePrev': true,
+    'hideNext' : true,
+  }).start();
 });
 (function(f) {
     if (typeof exports === "object" && typeof module !== "undefined") {

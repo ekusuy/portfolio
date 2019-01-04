@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   PER = 30
 
   def show
-    @contents = Content.where(user_id: @user.id).order(position: :asc) if @user
+    @contents = @user.contents.order(position: :asc) if @user
   end
 
   def index
@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      render json: @user
+    if current_user.update(user_params)
+      render json: current_user
     else
-      render json: { errors: @user.errors.messages }, status: 422
+      render json: { errors: current_user.errors.messages }, status: 422
     end
   end
 
