@@ -13,7 +13,7 @@
   .portfolio_all
     ul id=("#{'sortable' if @user.portfolio_creator?(current_user)}") data-intro=("各画像の左上のボタンから検索画面に移動し商品を設定しよう。スライドすると位置を交換できる。") data-step="1"
       - @contents.each do |content|
-        li.photo id="#{content.position}" data-id="#{content.position.to_s}" class=("#{'hvr-curl-top-left' if @user.portfolio_creator?(current_user)}") style="background-image:url(#{content.content_img})"
+        li.photo id="#{content.position}" class=("#{'hvr-curl-top-left' if @user.portfolio_creator?(current_user)}") style="background-image:url(#{content.content_img})"
           = link_to content.create_link, class: "material", target: "#{ '_new' if content.amazon_link.present? }" do
           - if @user.portfolio_creator?(current_user)
             = link_to edit_user_content_path(content.user_id, content.position) do
