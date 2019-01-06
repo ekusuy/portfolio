@@ -323,18 +323,14 @@ body {
   margin: 10px 0;
   float: left;
   width: 100%;
-  img {
-    width: 30%;
-    float: left;
-  }
   p {
     margin: 0;
     padding: 10px;
   }
 }
-
-.search-intro{
-  font-size: calc(65% + 0.5vw);
+.search-result img {
+  width: 30%;
+  float: left;
 }
 
 .search-result:hover {
@@ -344,6 +340,10 @@ body {
   -khtml-opacity: 0.6; /* Safari 1.x */
   opacity: 0.6;
   zoom: 1;
+}
+
+.search-intro{
+  font-size: calc(65% + 0.5vw);
 }
 
 .search-title {
