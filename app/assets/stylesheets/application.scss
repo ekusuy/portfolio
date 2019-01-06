@@ -20,41 +20,38 @@ body {
     メイリオ, Meiryo, sans-serif;
 }
 // #FIXME　デザインは実装後に変更する必要あり。
-#sortable {
+.portfolio_all ul {
   margin: auto;
   padding: 0;
   width: 100%;
   height: 100%;
   background-color: white;
-}
-
-#sortable:after {
-  display: block;
-  clear: both;
+  :after {
+    display: block;
+    clear: both;
+  }
 }
 
 .photo {
-  float: left; //横並び
+  float: left;
   list-style: none;
   position: relative;
   width: 33.3%;
   height: 33.3%;
-}
-.photo img {
-  display: block;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-}
-
-.photo i {
-  /*画像の左上に透明のエディットボタンを追加*/
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  i {
+    /*画像の左上に透明のエディットボタンを追加*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  .material {
+    display: block;
+    height: 100%;
+  }
 }
 
 .portfolio_menu {
@@ -311,22 +308,35 @@ body {
   color: #fff;
   border: none;
   border-radius: 0 25px 25px 0;
-}
-#search-btn .fa-search {
-  font-size: 20px;
-  position: absolute;
-  top: 30%;
-  left: 30%;
-}
-#search-btn:hover {
-  color: #888;
+  :hover {
+    color: #888;
+  }
+  .fa-search {
+    font-size: 20px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
 }
 
 .search-result {
   margin: 10px 0;
   float: left;
   width: 100%;
+  img {
+    width: 30%;
+    float: left;
+  }
+  p {
+    margin: 0;
+    padding: 10px;
+  }
 }
+
+.search-intro{
+  font-size: calc(65% + 0.5vw);
+}
+
 .search-result:hover {
   filter: alpha(opacity=60); /* ie lt 8 */
   -ms-filter: "alpha(opacity=60)"; /* ie 8 */
@@ -335,17 +345,11 @@ body {
   opacity: 0.6;
   zoom: 1;
 }
-.search-result img {
-  width: 30%;
-  float: left;
-}
-.search-result p {
-  margin: 0;
-  padding: 10px;
-}
+
 .search-title {
   width: 70%;
   float: left;
+  font-size: calc(65% + 0.5vw);
 }
 
 .index_header {
@@ -391,8 +395,6 @@ body {
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
-  //商品の入れ替えがスムーズになるオプション（動作が重い）
-  transition: all ease 1s;
 }
 .hvr-curl-top-left:before {
   pointer-events: none;
@@ -418,8 +420,8 @@ body {
 .hvr-curl-top-left:focus:before,
 .hvr-curl-top-left:active:before {
   //ページめくり余白にエディットボタンを挿入
-  width: 45%;
-  height: 45%;
+  width: 40%;
+  height: 40%;
   content: "\f044";
   font-size: 300%;
   font-family: FontAwesome;
