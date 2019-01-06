@@ -6,7 +6,7 @@ $(function() {
     let update_url = $(location).attr("pathname"); // updateのURLを形成
     let error_msg = $("#user-error-message"); // エラーメッセージ表示場所
     //AddClassされている場合はajaxを実行
-    if ($(".edit_content").length) {
+    if ($(".edit_content").length == 0) {
       $.ajax({
         type: "PATCH",
         url: update_url,
@@ -33,7 +33,7 @@ $(function() {
           });
           error_msg.show();
         });
-      //1回目のエディットボタン押下
+    //1回目のエディットボタン押下
     } else {
       // フォームの表示・非表示を切り替え、編集フォームにクラスを付与
       form_toggle();

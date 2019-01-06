@@ -53,6 +53,8 @@ gem 'active_decorator'
 gem 'bootsnap', '>= 1.1.0', require: false
 # amazon API用
 gem 'amazon-ecs'
+# バルクインサート用
+gem 'activerecord-import'
 
 # Configuration
 gem 'config'

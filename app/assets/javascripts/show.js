@@ -1,4 +1,4 @@
 //= require jquery-ui.min
+//= require jquery.ui.touch-punch.min
 //= require replace
-//= require resize
 //= require edit_title
