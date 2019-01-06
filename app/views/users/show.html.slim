@@ -1,5 +1,5 @@
 .main
-  .portfolio_title data-intro=("クリックして好きなタイトルを設定しよう！") data-step="2"
+  .portfolio_title data-intro=("クリックして好きなタイトルに変更しよう！") data-step="2"
     = render 'title', user: @user
   .portfolio_menu
     .viewed_user
@@ -11,12 +11,11 @@
       .tutorial
         = button_tag "使い方", class: "btn btn-info"
   .portfolio_all
-    ul#sortable data-intro=("画像の左上の編集ボタンから検索画面に移動してAmazonの画像を設定しよう") data-step="1"
+    ul id=("#{'sortable' if @user.portfolio_creator?(current_user)}") data-intro=("各画像の左上のボタンから検索画面に移動し商品を設定しよう。スライドすると位置を交換できる。") data-step="1"
       - @contents.each do |content|
-        li.photo class=("#{'hvr-curl-top-left' if @user.portfolio_creator?(current_user)}")
+        li.photo id="#{content.position}" data-id="#{content.position.to_s}" class=("#{'hvr-curl-top-left' if @user.portfolio_creator?(current_user)}") style="background-image:url(#{content.content_img})"
+          = link_to content.create_link, class: "material", target: "#{ '_new' if content.amazon_link.present? }" do
           - if @user.portfolio_creator?(current_user)
             = link_to edit_user_content_path(content.user_id, content.position) do
               i.fa.fa-pencil-square-o.fa-5x
-          = link_to content.create_link, target: "#{ '_new' if content.amazon_link.present? }" do
-            = image_tag content.content_img
     = javascript_include_tag "show.js"
