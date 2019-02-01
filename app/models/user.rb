@@ -2,11 +2,12 @@ class User < ApplicationRecord
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
-  validates :title, presence: true
-  validates :title, length: { maximum: 25 }
   has_many :authentications, dependent: :destroy
   has_many :contents, dependent: :destroy
   accepts_nested_attributes_for :authentications
+  validates :title, length: { maximum: 25 }
+  validates_presence_of :name, :twitter_id, :twitter_url, :title
+  validates :twitter_id, uniqueness: true
 
   def portfolio_creator?(current_user)
     # ユニークキーでの比較を実施
