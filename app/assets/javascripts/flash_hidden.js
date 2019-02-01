@@ -1,6 +1,6 @@
 $(function(){
   //flashメッセージをフェードアウトさせる
-  if ($(".alert").length == 0) {
+  if ($(".alert").length) {
     setTimeout($('.alert').fadeOut(3000));
   }
 })
