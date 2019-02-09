@@ -4,7 +4,7 @@
       = image_tag 'header_logo.png', class: 'header_logo'
   .header_center
     .button
-      = link_to 'ユーザー一覧', users_path
+      = link_to raw("みんなの<br>ポートフォリオを見る"), users_path, class: "menu_portfolios"
   .header_right
     - if current_user.present?
       .menu
@@ -17,6 +17,6 @@
     - else
       .menu
         .login_btn
-          a.btn.btn-social.btn-tw href="/oauth/twitter" role="button" 
+          a.btn.btn-social.btn-tw href="/oauth/twitter" role="button"
             i.fa.fa-twitter.left
             | ログイン
