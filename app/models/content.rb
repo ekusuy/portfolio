@@ -1,6 +1,7 @@
 class Content < ApplicationRecord
   include Rails.application.routes.url_helpers
   belongs_to :user
+  validates_presence_of :position
 
   def content_img
     amazon_img.present? ? amazon_img : '/images/no_photo.jpg'

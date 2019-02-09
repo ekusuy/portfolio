@@ -1,7 +1,12 @@
-.main
-  .index_header
-    h3 ユーザー一覧
-  .index_body
+.text-center.mb-4
+  h3.portfolios みんなのポートフォリオ
+.container-fluid
+  table.table.table-hover
+    thead
+      tr.text-center
+        th クリエイター
+        th タイトル
+        th 最新ポートフォリオ
     = render partial: 'shared/user_template', collection: @contents_all, as: 'content'
-    .index_footer
-      = paginate @contents_all
+  .index_footer
+    = paginate @contents_all

@@ -6,7 +6,7 @@ $(function() {
     let update_url = $(location).attr("pathname"); // updateのURLを形成
     let error_msg = $("#user-error-message"); // エラーメッセージ表示場所
     //AddClassされている場合はajaxを実行
-    if ($(".edit_content").length == 0) {
+    if ($(".edit_content").length) {
       $.ajax({
         type: "PATCH",
         url: update_url,
